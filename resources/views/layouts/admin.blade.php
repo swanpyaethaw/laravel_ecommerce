@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="{{ asset('admin/css/style.css') }}">
     <!-- endinject -->
     <link rel="shortcut icon" href="{{ asset('admin/images/favicon.png') }}" />
+
     @livewireStyles
 </head>
 <body>
@@ -64,6 +65,7 @@
     <script src="{{ asset('admin/js/dataTables.bootstrap4.js') }}"></script>
     <!-- End custom js for this page-->
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
     @yield('scripts')
 @livewireScripts
 @stack('script')

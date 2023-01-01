@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="shadow bg-white p-3">
-                        <h4 text-primary>
+                        <h4 class="text-primary">
                             <i class="material-icons">shopping_cart</i>My Order Details
                             <a href="{{ url('orders') }}" class="btn btn-danger btn-sm float-end">Back</a>
                         </h4>

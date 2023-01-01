@@ -9,8 +9,17 @@ use App\Http\Controllers\Controller;
 
 class OrderController extends Controller
 {
-    public function index(){
-        $orders = Order::whereDate('created_at',Carbon::now())->paginate(10);
+    public function index(Request $request){
+        $todayDate = Carbon::now()->format('Y-m-d');
+        $orders = Order::when($request->date != null,function ($q) use ($request) {
+                            return $q->whereDate('created_at',$request->date);
+                        },function ($q) use ($todayDate){
+                            return $q->whereDate('created_at',$todayDate);
+                        })
+                        ->when($request->status != null,function ($q) use ($request) {
+                            return $q->where('status_message',$request->status);
+                        })
+                        ->paginate(10);
         return view('admin.orders.index',compact('orders'));
     }
 
@@ -22,5 +31,18 @@ class OrderController extends Controller
             return redirect('admin/orders')->with('message','Order id not fount');
         }
 
+    }
+
+    public function updateOrderStatus(int $orderId,Request $request){
+        $order = Order::where('id',$orderId)->first();
+        if($order){
+            $order->update([
+                'status_message'=>$request->order_status
+            ]);
+            return redirect("admin/orders/$orderId")->with('message','Order Status Updated');
+
+        }else{
+            return redirect("admin/orders/$orderId")->with('message','Order id not found ');
+        }
     }
 }
