@@ -26,7 +26,7 @@
                             </div>
                             <div class="col-md-3">
                                 <label>Filter by Status</label>
-                                <select name="status" class="form-control">
+                                <select name="status" class="form-select">
                                     <option value="">Select All Status</option>
                                     <option value="in progress" {{ Request::get('status') == 'in progress' ? 'selected' : '' }}>In Progress</option>
                                     <option value="completed" {{ Request::get('status') == 'completed' ? 'selected' : '' }}>Completed</option>

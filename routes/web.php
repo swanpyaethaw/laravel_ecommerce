@@ -107,5 +107,9 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
         Route::get('/orders/{order}','show');
         Route::put('/orders/{order}','updateOrderStatus');
 
+        Route::get('/invoice/{order}','viewInvoice');
+        Route::get('/invoice/{order}/generate','generateInvoice');
+
+
     });
 });

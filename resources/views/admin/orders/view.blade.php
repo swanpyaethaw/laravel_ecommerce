@@ -15,7 +15,9 @@
                 <div class="card-header">
                         <h4 class="text-primary">
                             <i class="material-icons">shopping_cart</i>Order Details
-                            <a href="{{ url('admin/orders') }}" class="btn btn-danger btn-sm float-end">Back</a>
+                            <a href="{{ url('admin/orders') }}" class="btn btn-danger btn-sm float-end mx-1">Back</a>
+                            <a href="{{ url('admin/invoice/'.$order->id.'/generate') }}" class="btn btn-primary btn-sm float-end mx-1">Download Invoice</a>
+                            <a href="{{ url('admin/invoice/'.$order->id) }}" class="btn btn-warning btn-sm float-end mx-1" target="_blank">View Invoice</a>
                         </h4>
                 </div>
 
