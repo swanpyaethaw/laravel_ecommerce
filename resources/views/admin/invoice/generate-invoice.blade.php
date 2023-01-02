@@ -177,9 +177,9 @@
                     $totalPrice += $orderItem->product->selling_price * $orderItem->quantity
                 @endphp
             @endforeach
-            <tr class="fw-bold">
-                <td colspan="4">Total Amount:</td>
-                <td colspan="1">${{ $totalPrice }}</td>
+            <tr>
+                <td colspan="4" class="total-heading">Total Amount:</td>
+                <td colspan="1" class="total-heading">${{ $totalPrice }}</td>
             </tr>
         </tbody>
     </table>
