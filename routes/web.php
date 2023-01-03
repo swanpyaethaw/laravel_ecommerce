@@ -35,11 +35,16 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 // Frontend Routes
-Route::get('/',[FrontendController::class,'index']);
-Route::get('/collections',[FrontendController::class,'category']);
-Route::get('/collections/{category_slug}',[FrontendController::class,'products']);
-Route::get('/collections/{category_slug}/{product_slug}',[FrontendController::class,'productView']);
-Route::get('/thank-you',[FrontendController::class,'thankYou']);
+Route::controller(FrontendController::class)->group(function(){
+    Route::get('/','index');
+    Route::get('/collections','category');
+    Route::get('/collections/{category_slug}','products');
+    Route::get('/collections/{category_slug}/{product_slug}','productView');
+    Route::get('/thank-you','thankYou');
+    Route::get('/new-arrivals','newArrival');
+    Route::get('/featured-products','featuredProducts');
+
+});
 
 Route::middleware('auth')->group(function(){
     Route::get('/wishlist',[WishlistController::class,'index']);

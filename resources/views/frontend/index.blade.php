@@ -63,8 +63,9 @@
                 </div>
                 @if($trendingProducts)
                 <div class="col-md-12">
-                    <div class="owl-carousel owl-theme">
+                    <div class="owl-carousel owl-theme trending-product">
                     @foreach ($trendingProducts as $product)
+                        <div class="item">
                             <div class="product-card">
                                 <div class="product-card-img">
                                         <label class="stock bg-danger">New</label>
@@ -88,15 +89,18 @@
 
                                 </div>
                             </div>
-                            @endforeach
                         </div>
+
+                    @endforeach
+                        </div>
+                    </div>
                 @else
                     <div class="col-md-12">
                         <div class="p-2">
                             <h5>No Product Available/h5>
                         </div>
                     </div>
-                </div>
+
                 @endif
             </div>
         </div>
@@ -110,7 +114,7 @@
 @section('scripts')
 
     <script>
-        $('.owl-carousel').owlCarousel({
+        $('.trending-product').owlCarousel({
         loop:true,
         margin:10,
         nav:true,

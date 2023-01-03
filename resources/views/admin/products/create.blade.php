@@ -118,6 +118,12 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
+                                        <label>Featured</label><br>
+                                        <input type="checkbox" name="featured" style="height:50px;width:50px">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-3">
                                         <label>Status</label><br>
                                         <input type="checkbox" name="status" style="height:50px;width:50px">
                                     </div>
