@@ -67,8 +67,8 @@
                                     <h5>No Product Available for {{ $category->name }}</h5>
                                 </div>
                             </div>
-                        @endforelse
-                </div>
+                @endforelse
+            </div>
         </div>
     </div>
 

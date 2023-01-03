@@ -28,6 +28,13 @@
 
     <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
 
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
+
+    <!-- Exzoom -->
+    <link rel="stylesheet" href="{{ asset('assets/exzoom/jquery.exzoom.css') }}">
+
     <!-- CSS -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
     <!-- Default theme -->
@@ -52,6 +59,13 @@
     <script src="{{ asset('assets/js/jquery-3.6.2.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
 
+     <!-- Owl Carousel -->
+    <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+
+     <!-- Exzoom -->
+    <script src="{{ asset('assets/exzoom/jquery.exzoom.js') }}"></script>
+
+    <!-- Alertify -->
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
     <script>
@@ -61,7 +75,8 @@
         })
 
     </script>
+    @yield('scripts')
     @livewireScripts
-
+    @stack('script')
 </body>
 </html>
