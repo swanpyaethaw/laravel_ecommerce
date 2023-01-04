@@ -1,19 +1,21 @@
 <?php
 
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\ColorController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\OrderController as AdminOrderController;
-use App\Http\Controllers\Admin\ProductController;
+use App\Http\Livewire\Admin\Brand\Index;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Frontend\OrderController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\FrontendController;
-use App\Http\Controllers\Frontend\OrderController;
 use App\Http\Controllers\Frontend\WishlistController;
-use App\Http\Livewire\Admin\Brand\Index;
+use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,15 +59,19 @@ Route::middleware('auth')->group(function(){
 
 
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
-    Route::get('dashboard',[DashboardController::class,'index']);
+    Route::get('/dashboard',[DashboardController::class,'index']);
+
+    Route::get('/settings',[SettingController::class,'index']);
+    Route::post('/settings',[SettingController::class,'store']);
+
 
     // Category Routes
     Route::controller(CategoryController::class)->group(function(){
-        Route::get('category','index');
-        Route::get('category/create','create');
-        Route::post('category','store');
-        Route::get('category/{category}/edit','edit');
-        Route::put('category/{category}','update');
+        Route::get('/category','index');
+        Route::get('/category/create','create');
+        Route::post('/category','store');
+        Route::get('/category/{category}/edit','edit');
+        Route::put('/category/{category}','update');
     });
 
     Route::get('/brands',Index::class);
@@ -114,7 +120,16 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
 
         Route::get('/invoice/{order}','viewInvoice');
         Route::get('/invoice/{order}/generate','generateInvoice');
+    });
 
+    // User Routes
+    Route::controller(UserController::class)->group(function(){
+        Route::get('/users','index');
+        Route::get('/users/create','create');
+        Route::post('/users','store');
+        Route::get('/users/{user_id}/edit','edit');
+        Route::put('/users/{user_id}','update');
+        Route::get('/users/{user_id}/delete','destroy');
 
     });
 });
