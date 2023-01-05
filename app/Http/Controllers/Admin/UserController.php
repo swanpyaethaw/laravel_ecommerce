@@ -45,7 +45,6 @@ class UserController extends Controller
     public function update(Request $request,int $userId){
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($userId)],
             'password' => ['string', 'min:8'],
             'role_as' => ['required','integer']
         ]);
@@ -54,7 +53,6 @@ class UserController extends Controller
         $user = User::findorFail($userId);
         $user->update([
             'name' => $request->name,
-            'email' => $request->email,
             'role_as' => $request->role_as
         ]);
         if($request->has('password')){

@@ -81,8 +81,8 @@
                                        </a>
                                     </h5>
                                     <div>
-                                        <span class="selling-price">{{ $product->selling_price }}</span>
-                                        <span class="original-price">{{ $product->original_price }}</span>
+                                        <span class="selling-price">${{ $product->selling_price }}</span>
+                                        <span class="original-price">${{ $product->original_price }}</span>
                                     </div>
 
                                 </div>
@@ -135,8 +135,8 @@
                                        </a>
                                     </h5>
                                     <div>
-                                        <span class="selling-price">{{ $product->selling_price }}</span>
-                                        <span class="original-price">{{ $product->original_price }}</span>
+                                        <span class="selling-price">${{ $product->selling_price }}</span>
+                                        <span class="original-price">${{ $product->original_price }}</span>
                                     </div>
 
                                 </div>
@@ -189,8 +189,8 @@
                                        </a>
                                     </h5>
                                     <div>
-                                        <span class="selling-price">{{ $product->selling_price }}</span>
-                                        <span class="original-price">{{ $product->original_price }}</span>
+                                        <span class="selling-price">${{ $product->selling_price }}</span>
+                                        <span class="original-price">${{ $product->original_price }}</span>
                                     </div>
 
                                 </div>

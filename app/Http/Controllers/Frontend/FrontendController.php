@@ -28,6 +28,11 @@ class FrontendController extends Controller
         return view('frontend.pages.featured-products',compact('featuredProducts'));
     }
 
+    public function searchProducts(Request $request){
+        $searchProducts = Product::where('name','LIKE','%'.$request->search.'%')->latest()->paginate(15);
+        return view('frontend.pages.search',compact('searchProducts'));
+    }
+
     public function category(){
         $categories = Category::where('status','0')->get();
         return view('frontend.collections.category.index',compact('categories'));

@@ -16,6 +16,7 @@ use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\WishlistController;
 use App\Http\Controllers\Admin\OrderController as AdminOrderController;
+use App\Http\Controllers\Frontend\UserController as FrontendUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,16 +46,19 @@ Route::controller(FrontendController::class)->group(function(){
     Route::get('/thank-you','thankYou');
     Route::get('/new-arrivals','newArrival');
     Route::get('/featured-products','featuredProducts');
-
+    Route::get('/search','searchProducts');
 });
 
-Route::middleware('auth')->group(function(){
+Route::middleware(['auth'])->group(function(){
     Route::get('/wishlist',[WishlistController::class,'index']);
     Route::get('/cart',[CartController::class,'index']);
     Route::get('/checkout',[CheckoutController::class,'index']);
+
     Route::get('/orders',[OrderController::class,'index']);
     Route::get('/orders/{order}',[OrderController::class,'show']);
 
+    Route::get('/profile',[FrontendUserController::class,'index']);
+    Route::post('/profile',[FrontendUserController::class,'updateUserDetails']);
 });
 
 
