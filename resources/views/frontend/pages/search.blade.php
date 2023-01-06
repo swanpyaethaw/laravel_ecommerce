@@ -52,7 +52,9 @@
                         </div>
                     </div>
                 @endforelse
-
+                    <div>
+                        {{ $searchProducts->appends(request()->input())->links() }}
+                    </div>
 
             </div>
         </div>

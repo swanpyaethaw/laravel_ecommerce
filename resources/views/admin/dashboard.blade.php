@@ -41,6 +41,7 @@
                     <a href="{{ url('admin/orders') }}" class="text-white">View</a>
                 </div>
             </div>
+            <hr>
         </div>
 
         <div class="row">
@@ -65,6 +66,7 @@
                     <a href="{{ url('admin/users') }}" class="text-white">View</a>
                 </div>
             </div>
+            <hr>
         </div>
 
         <div class="row">
@@ -72,21 +74,21 @@
                 <div class="card card-body bg-primary text-white mb-3">
                     <label>Total Products</label>
                     <h1>{{ $totalProducts }}</h1>
-                    <a href="{{ url('admin/orders') }}" class="text-white">View</a>
+                    <a href="{{ url('admin/products') }}" class="text-white">View</a>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card card-body bg-success text-white mb-3">
                     <label>Total Categories</label>
                     <h1>{{ $totalCategories }}</h1>
-                    <a href="{{ url('admin/orders') }}" class="text-white">View</a>
+                    <a href="{{ url('admin/category') }}" class="text-white">View</a>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card card-body bg-warning text-white mb-3">
                     <label>Total Brands</label>
                     <h1>{{ $totalBrands }}</h1>
-                    <a href="{{ url('admin/orders') }}" class="text-white">View</a>
+                    <a href="{{ url('admin/brands') }}" class="text-white">View</a>
                 </div>
             </div>
         </div>
