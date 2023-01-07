@@ -15,6 +15,10 @@ class Category extends Model
         return $this->hasMany(Product::class);
     }
 
+    public function relatedProducts(){
+        return $this->hasMany(Product::class)->latest()->take(20);
+    }
+
     public function brands(){
         return $this->hasMany(Brand::class,'category_id','id');
     }
