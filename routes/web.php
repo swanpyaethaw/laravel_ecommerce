@@ -47,9 +47,12 @@ Route::controller(FrontendController::class)->group(function(){
     Route::get('/new-arrivals','newArrival');
     Route::get('/featured-products','featuredProducts');
     Route::get('/search','searchProducts');
+    Route::get('/reviews/{product_id}','reviews');
+    Route::post('/addReview/{product_id}','addReview');
+    Route::get('/test','test');
 });
 
-Route::middleware(['auth'])->group(function(){
+Route::middleware(['auth','isUser'])->group(function(){
     Route::get('/wishlist',[WishlistController::class,'index']);
     Route::get('/cart',[CartController::class,'index']);
     Route::get('/checkout',[CheckoutController::class,'index']);
@@ -63,7 +66,7 @@ Route::middleware(['auth'])->group(function(){
     Route::post('change-password',[FrontendUserController::class,'changePassword']);
 });
 
-
+// Admin Routes
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
     Route::get('/dashboard',[DashboardController::class,'index']);
 

@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Models\Order;
+use App\Models\Review;
 use App\Models\Slider;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class FrontendController extends Controller
 {
@@ -16,6 +20,10 @@ class FrontendController extends Controller
         $newArrivalProducts = Product::latest()->take(14)->get();
         $featuredProducts = Product::where('featured','1')->latest()->take(14)->get();
         return view('frontend.index',compact('sliders','trendingProducts','newArrivalProducts','featuredProducts'));
+    }
+
+    public function test(){
+        return view('test');
     }
 
     public function newArrival(){

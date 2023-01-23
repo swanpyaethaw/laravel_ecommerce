@@ -22,4 +22,8 @@ class Product extends Model
     public function productColors(){
         return $this->hasMany(ProductColor::class,'product_id');
     }
+
+    public function reviews(){
+        return $this->hasMany(Review::class,'product_id','id');
+    }
 }

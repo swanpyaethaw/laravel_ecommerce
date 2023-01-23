@@ -81,6 +81,12 @@
                                        </a>
                                     </h5>
                                     <div>
+                                        @if ($product->reviews->count() > 0)
+                                            {{ number_format($product->reviews->sum('rating')/$product->reviews->count(),1) }}
+                                            <i class="bi bi-star-fill"></i>
+                                        @endif
+                                    </div>
+                                    <div>
                                         <span class="selling-price">${{ $product->selling_price }}</span>
                                         <span class="original-price">${{ $product->original_price }}</span>
                                     </div>
@@ -135,6 +141,12 @@
                                        </a>
                                     </h5>
                                     <div>
+                                        @if ($product->reviews->count() > 0)
+                                            {{ number_format($product->reviews->sum('rating')/$product->reviews->count(),1) }}
+                                            <i class="bi bi-star-fill"></i>
+                                        @endif
+                                    </div>
+                                    <div>
                                         <span class="selling-price">${{ $product->selling_price }}</span>
                                         <span class="original-price">${{ $product->original_price }}</span>
                                     </div>
@@ -188,6 +200,12 @@
                                             {{ $product->name }}
                                        </a>
                                     </h5>
+                                    <div>
+                                        @if ($product->reviews->count() > 0)
+                                            {{ number_format($product->reviews->sum('rating')/$product->reviews->count(),1) }}
+                                            <i class="bi bi-star-fill"></i>
+                                        @endif
+                                    </div>
                                     <div>
                                         <span class="selling-price">${{ $product->selling_price }}</span>
                                         <span class="original-price">${{ $product->original_price }}</span>

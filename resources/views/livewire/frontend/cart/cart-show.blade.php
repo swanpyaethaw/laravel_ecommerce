@@ -52,9 +52,9 @@
                                     <div class="col-md-2 col-7 my-auto">
                                         <div class="quantity">
                                             <div class="input-group">
-                                                <button type="button" wire:click="decrementQty({{$cartItem->id}})" wire:loading.attr = "disabled" class="btn btn1"><i class="material-icons md-18">remove</i></button>
+                                                <button type="button" wire:click="decrementQty({{$cartItem->id}})" wire:loading.attr = "disabled" class="btn btn1"><i class="bi bi-dash"></i></button>
                                                 <input type="text" value="{{ $cartItem->quantity }}" class="input-quantity" />
-                                                <button type="button" wire:click="incrementQty({{$cartItem->id}})" wire:loading.attr = "disabled" class="btn btn1"><i class="material-icons md-18">add</i>
+                                                <button type="button" wire:click="incrementQty({{$cartItem->id}})" wire:loading.attr = "disabled" class="btn btn1"><i class="bi bi-plus"></i>
                                                 </button>
                                             </div>
                                         </div>
@@ -70,7 +70,7 @@
                                         <div class="remove">
                                             <button type="button" wire:click="removeCartItem({{$cartItem->id}})" class="btn btn-danger btn-sm">
                                                 <div class="d-flex align-items-center">
-                                                    <i class="material-icons pe-1">delete</i>
+                                                    <i class="bi bi-trash"></i>
                                                     <span wire:loading.remove wire:target="removeCartItem({{$cartItem->id}})">
                                                      Remove
                                                     </span>

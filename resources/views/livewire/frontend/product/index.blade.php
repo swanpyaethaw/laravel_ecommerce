@@ -8,7 +8,6 @@
                 <div class="card-body">
                     @foreach ($category->brands as $brand)
                         <label class="d-block"><input type="checkbox" wire:model = "brandInputs" value="{{ $brand->name }}"> {{ $brand->name }}</label>
-
                     @endforeach
                 </div>
             </div>

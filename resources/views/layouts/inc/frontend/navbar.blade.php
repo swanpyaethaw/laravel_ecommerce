@@ -19,13 +19,13 @@
                         <ul class="nav justify-content-end">
 
                             <li class="nav-item d-flex align-items-center">
-                                <i class="material-icons">shopping_cart</i>
+                                <i class="bi bi-cart-fill"></i>
                                 <a class="nav-link ps-1" href="{{ url('cart') }}">
                                      Cart (<livewire:frontend.cart.cart-count />)
                                 </a>
                             </li>
                             <li class="nav-item d-flex align-items-center">
-                                <i class="material-icons">list</i>
+                                <i class="bi bi-heart-fill"></i>
                                 <a class="nav-link ps-1" href="{{ url('wishlist') }}">
                                      Wishlist (<livewire:frontend.wishlist-count />)
                                 </a>
@@ -45,13 +45,13 @@
                         @else
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fa fa-user"></i> {{ Auth::user()->name }}
+                                <i class="bi bi-user"></i> {{ Auth::user()->name }}
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{{ url('profile') }}"><i class="fa fa-user"></i> Profile</a></li>
-                                <li><a class="dropdown-item" href="{{ url('orders') }}"><i class="fa fa-list"></i> My Orders</a></li>
-                                <li><a class="dropdown-item" href="{{ url('wishlist') }}"><i class="fa fa-heart"></i> My Wishlist</a></li>
-                                <li><a class="dropdown-item" href="{{ url('cart') }}"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
+                                <li><a class="dropdown-item" href="{{ url('profile') }}"><i class="bi bi-person"></i> Profile</a></li>
+                                <li><a class="dropdown-item" href="{{ url('orders') }}"><i class="bi bi-list"></i> My Orders</a></li>
+                                <li><a class="dropdown-item" href="{{ url('wishlist') }}"><i class="bi bi-heart"></i> My Wishlist</a></li>
+                                <li><a class="dropdown-item" href="{{ url('cart') }}"><i class="bi bi-cart"></i> My Cart</a></li>
                                 <li>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();

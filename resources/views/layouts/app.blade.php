@@ -13,15 +13,11 @@
     <meta name="keywords" content="@yield('meta_keyword')">
     <meta name="description" content="@yield('meta_description')">
 
+    <script src="https://kit.fontawesome.com/12135abbfb.js" crossorigin="anonymous"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
-    <!-- Material Icon -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
@@ -73,6 +69,8 @@
     <!-- Alertify -->
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
+
+
     <script>
         window.addEventListener('message', event => {
             alertify.set('notifier','position', 'top-right');
@@ -80,6 +78,9 @@
         })
 
     </script>
+
+    <!-- End custom js for this page-->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     @yield('scripts')
     @livewireScripts
     @stack('script')

@@ -42,7 +42,7 @@
                                     <div class="remove">
                                         <button type="button" wire:click="removeWishListItem({{ $wishlistItem->id }})" class="btn btn-danger btn-sm">
                                             <div class="d-flex align-items-center">
-                                                <i class="material-icons pe-1">delete</i>
+                                                <i class="bi bi-trash"></i>
                                                 <span wire:loading.remove wire:target="removeWishListItem({{ $wishlistItem->id }})">
                                                     <i class="fa fa-trash"></i> Remove
                                                 </span>
